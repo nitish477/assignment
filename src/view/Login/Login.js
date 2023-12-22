@@ -15,7 +15,8 @@ function Login() {
           
           if(responce){
             alert('Login SuccessFully!')
-            localStorage.setItem('user',JSON.stringify(responce?.data?.token))
+            localStorage.setItem('token',JSON.stringify(responce?.data?.token))
+            localStorage.setItem('user',JSON.stringify(responce?.data))
             window.location.href='/'
 
           }

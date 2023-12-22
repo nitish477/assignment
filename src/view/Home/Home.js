@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
 import axios from 'axios'
+import Card from '../../component/Card/Card'
+import Navbar from '../../component/Navbar/Navbar'
 function Home() {
     const [product,setProduct]=useState([])
     const loadProduct =async()=>{
@@ -10,7 +12,7 @@ function Home() {
     }
 
     useEffect(()=>{
-       const getToken= JSON.parse(localStorage.getItem('user'))
+       const getToken= JSON.parse(localStorage.getItem('token'))
        if(!getToken){
         alert('login first')
         window.location.href='/login'
@@ -22,11 +24,22 @@ function Home() {
     },[])
   return (
     <>
-       <div>
+    <Navbar/>
+       <div className='product-contanier'>
 
          {
             product?.map((obj,i)=>{
+               const {brand,description,price,discountPercentage,thumbnail,title,category}=obj
 
+                  return  <Card 
+                  thumbnail={thumbnail} 
+                  title={title} 
+                  price={price} 
+                  description={description} 
+                  brand={brand} 
+                  discountPercentage={discountPercentage}
+                  category={category}
+                  />  
             })
          }
 
