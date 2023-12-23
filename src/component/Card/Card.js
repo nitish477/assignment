@@ -1,6 +1,7 @@
 import React from 'react'
 import './Card.css'
-function Card({brand,description,images,price,thumbnail,title,category,discountPercentage}) {
+import { Link } from 'react-router-dom'
+function Card({brand,description,images,price,thumbnail,title,category,discountPercentage,id}) {
   return (
     <>
       <div className="product-card spacing">
@@ -13,9 +14,9 @@ function Card({brand,description,images,price,thumbnail,title,category,discountP
                 <h4>{title}</h4>
                 <p> {description} </p>
                 <div className="product-bottom-details">
-                    <div className="product-price"><small>{discountPercentage}% ⬇</small>₹{price}</div>
+                    <div className="product-price"><small>{discountPercentage}% ⬇</small>${price}</div>
                     <div className="product-links">
-                       <button>Add to cart</button> 
+                      <Link to={`/details/${id}`}> <button>Buy Now</button> </Link>
                     </div>
                 </div>
             </div>

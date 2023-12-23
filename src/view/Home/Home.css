@@ -3,3 +3,13 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.input-box{
+    display: block;
+    margin: 10px auto;
+    padding: 5px 10px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #15C39A;
+    background:transparent;
+}

@@ -1,0 +1,39 @@
+.contanier-main{
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+}
+.details-img{
+    height: 200px;
+    object-fit: cover;
+}
+.main{
+    display: flex;
+   justify-content: space-around;
+}
+.sub-main{
+    margin: 30px 0;
+    padding: 5px 20px;
+    border-radius: 10px;
+    width: 40%;
+}
+.product-price {
+    font-size: 18px;
+    color: #F52544;
+    font-weight: 600;
+}
+
+.product-price small {
+    font-size: 80%;
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 5px;
+}
+.quantity{
+    height: 50px;
+    width: 50px;
+}
+.quantity-div{
+    width: fit-content;
+    margin: 80px auto;
+}

@@ -5,11 +5,13 @@ import Card from '../../component/Card/Card'
 import Navbar from '../../component/Navbar/Navbar'
 function Home() {
     const [product,setProduct]=useState([])
+    const[search,setSearch]=useState('')
     const loadProduct =async()=>{
         const responce= await axios.get('https://dummyjson.com/products')
        setProduct(responce?.data?.products)
-       console.log(responce?.data?.products)
     }
+
+
 
     useEffect(()=>{
        const getToken= JSON.parse(localStorage.getItem('token'))
@@ -22,14 +24,41 @@ function Home() {
        loadProduct()
 
     },[])
+
+
+    const searchProduct=async()=>{
+      if (search === '') {
+         loadProduct()
+         return
+       }
+      try{
+         const res= await axios.get(`https://dummyjson.com/products/search?q=${search}`)
+         setProduct(res?.data?.products)
+      }catch(err){
+         console.log(err.message)
+      }
+    }
+
+    useEffect(()=>{
+       searchProduct()
+    },[search])
   return (
     <>
     <Navbar/>
+    <input 
+     type='text'
+     value={search}
+     onChange={(e)=>{
+      setSearch(e.target.value)
+     }}
+     className='input-box'
+     placeholder='Search'
+    />
        <div className='product-contanier'>
 
          {
             product?.map((obj,i)=>{
-               const {brand,description,price,discountPercentage,thumbnail,title,category}=obj
+               const {brand,description,price,discountPercentage,thumbnail,title,category,id}=obj
 
                   return  <Card 
                   thumbnail={thumbnail} 
@@ -39,6 +68,7 @@ function Home() {
                   brand={brand} 
                   discountPercentage={discountPercentage}
                   category={category}
+                  id={id}
                   />  
             })
          }
