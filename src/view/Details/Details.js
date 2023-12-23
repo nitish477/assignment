@@ -74,7 +74,7 @@ const addToCart =async()=>{
                 </div>
                 <div className='sub-main'>
                        <div className='quantity-div'>
-                       <button className='quantity' onClick={()=>{
+                       <button className='quantity-btn' onClick={()=>{
                         if(quantity===5){
                             alert('You can order only 5 quantity')
                             return
@@ -82,7 +82,7 @@ const addToCart =async()=>{
                         setQuantity(quantity+1)
                        }}>+</button>
                          { " "} { quantity }  { " "} 
-                          <button className='quantity'  onClick={()=>{
+                          <button className='quantity-btn'  onClick={()=>{
                         if(quantity===1){
                             alert(`You can't order less than one`)
                             return
@@ -90,7 +90,7 @@ const addToCart =async()=>{
                         setQuantity(quantity-1)
                        }}>-</button>
                        </div>
-                       <button onClick={addToCart}>Add to cart</button>
+                       <button onClick={addToCart} type='button'>Add to cart</button>
                 </div>
             </div>
         </>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-body {
+.container{
   font-family: 'Open Sans', sans-serif;
   background: #f9faff;
   color: #3a3c47;

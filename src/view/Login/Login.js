@@ -29,6 +29,7 @@ function Login() {
 
   return (
    <>
+   <div className="container">
    <h1>Login</h1>
 <form>
   <div className="row">
@@ -53,6 +54,7 @@ function Login() {
   </div>
   <button type="button" onClick={login} >Login</button>
 </form>
+</div>
    </>
   )
 }

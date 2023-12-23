@@ -47,7 +47,9 @@ import logout from './../../assets/logout.png'
             <Link to='/about'>About</Link>
           </li>
         {
-            userData.email? null:<><li>
+            userData.email? <li>
+            <Link to='/order'>Orders🛒</Link>
+          </li>:<><li>
             <Link to='/login'>Login</Link>
           </li></>
         }

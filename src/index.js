@@ -4,6 +4,7 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import Login from './view/Login/Login';
 import Home from './view/Home/Home';
 import Details from './view/Details/Details';
+import Orders from './view/Orders/Orders';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     {
         path:'/details/:id',
         element:<Details/>
+    },
+    {
+        path:'/order',
+        element:<Orders/>
     }
 ])
 root.render(<RouterProvider router={router} />);

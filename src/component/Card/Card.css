@@ -1,14 +1,5 @@
 
 
-
-
-
-section {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-}
-
 .product-card {
     max-width: 380px;
     position: relative;
